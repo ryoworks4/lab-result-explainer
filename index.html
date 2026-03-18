@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>検査結果説明サポート | クリニック向けAIツール</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>検査結果説明サポート</h1>
+    <p>検査結果をAIが患者さん向けにやさしく解説します</p>
+</header>
+
+<main>
+    <div class="container">
+        <!-- 検査カテゴリ選択 -->
+        <label>検査カテゴリを選択</label>
+        <div class="category-buttons">
+            <button class="cat-btn active" data-cat="blood">🩸 血液検査</button>
+            <button class="cat-btn" data-cat="urine">🧪 尿検査</button>
+            <button class="cat-btn" data-cat="imaging">📷 画像検査</button>
+            <button class="cat-btn" data-cat="physiological">💓 生理機能検査</button>
+        </div>
+
+        <!-- 検査項目入力 -->
+        <label for="test-input">検査項目と結果を入力</label>
+        <textarea id="test-input" rows="4" maxlength="500" placeholder="例: HbA1c 7.2%、空腹時血糖 142mg/dL"></textarea>
+        <div class="char-count"><span id="char-count">0</span> / 500</div>
+
+        <!-- 説明レベル選択 -->
+        <label>説明レベル</label>
+        <div class="level-buttons">
+            <button class="level-btn active" data-level="simple">かんたん</button>
+            <button class="level-btn" data-level="standard">ふつう</button>
+            <button class="level-btn" data-level="detailed">くわしく</button>
+        </div>
+
+        <!-- サンプル -->
+        <div class="examples">
+            <p class="examples-label">入力例（クリックで入力）</p>
+            <div class="example-tags">
+                <button class="example-tag">HbA1c 7.2%</button>
+                <button class="example-tag">AST 45 U/L、ALT 52 U/L</button>
+                <button class="example-tag">eGFR 55 mL/min</button>
+                <button class="example-tag">白血球 12000 /μL、CRP 3.5 mg/dL</button>
+                <button class="example-tag">LDLコレステロール 160 mg/dL</button>
+                <button class="example-tag">胸部X線で右下肺野に浸潤影</button>
+            </div>
+        </div>
+
+        <!-- 生成ボタン -->
+        <button id="generate-btn" class="primary-btn">説明を生成する</button>
+
+        <!-- 結果表示 -->
+        <div class="output-section">
+            <div id="result-area" class="result-area">
+                <p class="placeholder-text">検査結果を入力して「説明を生成する」を押してください</p>
+            </div>
+            <button id="copy-btn" class="copy-btn" style="display:none;">コピー</button>
+        </div>
+    </div>
+
+    <!-- 使い方 -->
+    <div class="how-to-use">
+        <h2>使い方</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <p>検査カテゴリと説明レベルを選択</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <p>検査項目と結果を入力</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <p>AIがやさしく解説</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>※ このツールはデモ版です。実際の診断には使用しないでください</p>
+    <p>※ 生成された説明は必ず医療従事者が確認してください</p>
+    <p>&copy; 2025 RyoWorks</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
